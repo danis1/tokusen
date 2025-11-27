@@ -4,12 +4,21 @@ Página desenvolvida como avaliação da disciplina **Desenvolvimento Web 1 (P2)
 
 ---
 
-## 🔖 Informações da aluna
+## 🔖 Informações
 
 * **Nome:** Daniela Feitoza Alves
 * **Disciplina:** Desenvolvimento Web 1
 * **Professor(a):** *Eulaliane*
 * **Turma:** DSM – 1° Ciclo / 2025
+
+---
+
+## 🔑 Acesso
+
+```
+Login: daniela
+Senha: 1291392522002
+```
 
 ---
 
@@ -49,15 +58,6 @@ Todo o conteúdo da página foi organizado em pastas, seguindo a estrutura recom
  ┃ ┗ facebook.png
  ┣ index.html
  ┗ README.md
-```
-
----
-
-## 🔑 Acesso
-
-```
-Login: daniela
-Senha: 1291392522002
 ```
 
 ---
