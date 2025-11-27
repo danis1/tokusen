@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Tokusen 特選 </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/icon.jpg">
+</head>
+
+<body>
+
+   <header>
+        <nav class="nav">
+            <div class="logo"><img src="./img/logo.png"></div>
+            <ul class="links-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        </header>
+
+    <section class="conteiner-login">
+        <div class="cartao-login">
+            <h2>Acesso Restrito</h2>
+            <form id="formularioLogin" class="formulario-login">
+                <div class="grupo-input">
+                    <label for="entradaNome">Email</label>
+                    <input type="text" id="entradaNome" placeholder="seuemail@email.com">
+                </div>
+                <div class="grupo-input">
+                    <label for="entradaMatricula">Senha</label>
+                    <input type="password" id="entradaMatricula" placeholder="Senha">
+                </div>
+                <button type="submit" class="botao-principal">Entrar</button>
+            </form>
+            <div class="links-auxiliares">
+                <span>Não tem conta? Cadastre-se!</span>
+                <span>Esqueceu a senha?</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Tokusen 2025.Todos os direitos reservados.</p>
+        <div class="icones-rodape">
+            <span>
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20gostaria%20de%20conhecer%20a%20casa" target="_blank">
+                    <img src="./img/whats.png">
+                </a>
+                <img src="./img/facebook.png">
+                <img src="./img/instagram.png">
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        const formularioLogin = document.getElementById('formularioLogin');
+
+        if (formularioLogin) {
+            formularioLogin.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nome = document.getElementById('entradaNome').value.trim();
+                const matricula = document.getElementById('entradaMatricula').value.trim();
+
+                if (!nome || !matricula) {
+                    alert("Por favor, preencha todos os campos para entrar no santuário.");
+                    return;
+                }
+
+                const nomeCorreto = "daniela";
+                const matriculaCorreta = "1291392522002";
+
+                if (nome.toLowerCase() === nomeCorreto && matricula === matriculaCorreta) {
+                    window.location.href = "pedido.html";
+                } else {
+                    alert("Login inválido!.");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

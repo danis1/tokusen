@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Pedido | Tokusen 特選 </title>
+    <link rel="icon" href="./img/icon.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav">
+            <div class="logo"><img src="./img/logo.png"></div>
+            <ul class="links-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#avaliacoes">Avaliações</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <button id="botaoSair" class="botao-sair-menu">Sair</button>
+        </nav>
+    </header>
+
+    <section class="secao-pedido">
+        <div class="conteiner-pedido">
+
+            <div class="lista-produtos">
+
+                <div class="item-lista">
+                    <div class="ft-produto">
+                        <img src="./img/sussurro.jpg">
+                    </div>
+                    <div class="conteudo-produto">
+                        <div>
+                            <h3>Sussurro do Oceano</h3>
+                            <p>Combinado de Niguiris da estação com peixes frescos selecionados pelo chef.</p>
+                        </div>
+                        <div class="acao-produto">
+                            <span class="preco">R$ 119,99</span>
+                            <button class="botao-comprar"
+                                onclick="adicionarAoCarrinho('Sussurro do Oceano', 119.99, './img/sussurro.jpg')">Adicionar ao Pedido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-lista">
+                    <div class="ft-produto">
+                        <img src="./img/wagyu.jpg">
+                    </div>
+                    <div class="conteudo-produto">
+                        <div>
+                            <h3>Chama do Dragão</h3>
+                            <p>Wagyu A5 grelhado na pedra vulcânica, finalizado com flor de sal e wasabi fresco.</p>
+                        </div>
+                        <div class="acao-produto">
+                            <span class="preco">R$ 299,99</span>
+                            <button class="botao-comprar"
+                                onclick="adicionarAoCarrinho('Chama do Dragão', 229.99, './img/wagyu.jpg')">Adicionar ao Pedido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-lista">
+                    <div class="ft-produto">
+                        <img src="./img/sakê.jpg">
+                    </div>
+                    <div class="conteudo-produto">
+                        <div>
+                            <h3>Lágrimas da Lua</h3>
+                            <p>Sake Premium Junmai Daiginjo, servido na temperatura ideal em cerâmica artesanal.</p>
+                        </div>
+                        <div class="acao-produto">
+                            <span class="preco">R$ 179,99</span>
+                            <button class="botao-comprar"
+                                onclick="adicionarAoCarrinho('Lágrimas da Lua', 179.99, './img/sakê.jpg')">Adicionar ao Pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="area-carrinho">
+                <h2 class="titulo-carrinho">Seu Pedido</h2>
+
+                <div id="containerItensCarrinho" class="itens-carrinho">
+                    <p class="carrinho-vazio">Ainda não há obras selecionadas.</p>
+                </div>
+
+                <div class="resumo">
+                    <div class="exibicao-total">
+                        <span>Total:</span>
+                        <span id="valorTotal" style="color: #bf9b30;">R$ 0,00</span>
+                    </div>
+                    <button class="botao-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Tokusen 2025.Todos os direitos reservados.</p>
+        <div class="icones-rodape">
+            <span>
+                <a href="https://wa.me/5500000000000?text=Olá, gostaria de conhecer a casa." target="_blank">
+                    <img src="./img/whats.png">
+                </a>
+                <img src="./img/facebook.png">
+                <img src="./img/instagram.png">
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        let carrinho = [];
+
+        function adicionarAoCarrinho(nome, preco, imagemUrl) {
+            const id = Date.now();
+            carrinho.push({ id, nome, preco, imagemUrl });
+            atualizarCarrinhoUI();
+        }
+
+        function removerDoCarrinho(id) {
+            carrinho = carrinho.filter(item => item.id !== id);
+            atualizarCarrinhoUI();
+        }
+
+        function atualizarCarrinhoUI() {
+            const container = document.getElementById('containerItensCarrinho');
+            const totalSpan = document.getElementById('valorTotal');
+
+            if (!container) return;
+
+            container.innerHTML = '';
+            let total = 0;
+
+            if (carrinho.length === 0) {
+                container.innerHTML = '<p class="carrinho-vazio">Ainda não há obras selecionadas.</p>';
+            } else {
+                carrinho.forEach(item => {
+                    total += item.preco;
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item-carrinho';
+
+                    let imgTag = '';
+                    if (item.imagemUrl) {
+                        imgTag = `<img src="${item.imagemUrl}" alt="${item.nome}">`;
+                    }
+
+                    itemDiv.innerHTML = `
+                        <div class="info-item-carrinho">
+                            <div class="miniatura-carrinho">
+                                ${imgTag}
+                            </div>
+                            <div class="info-texto-carrinho">
+                                <strong>${item.nome}</strong><br>
+                                <span>R$ ${item.preco.toFixed(2).replace('.', ',')}</span>
+                            </div>
+                            <button class="botao-remover" onclick="removerDoCarrinho(${item.id})">Excluir</button>
+                        </div>
+                    `;
+                    container.appendChild(itemDiv);
+                });
+            }
+
+            totalSpan.innerText = "R$ " + total.toFixed(2).replace('.', ',');
+        }
+
+        function finalizarPedido() {
+            if (carrinho.length === 0) {
+                alert("Adicione produtos ao seu pedido antes de finalizar");
+            } else {
+                alert("Pedido finalizado com sucesso!");
+                carrinho = [];
+                atualizarCarrinhoUI();
+            }
+        }
+
+        const botaoSair = document.getElementById('botaoSair');
+        if (botaoSair) {
+            botaoSair.addEventListener('click', function () {
+                window.location.href = "index.html";
+            });
+        }
+    </script>
+</body>
+
+</html>
