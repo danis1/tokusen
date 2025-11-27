@@ -33,21 +33,10 @@ A proposta deste trabalho foi elaborar uma **Página completa**, seguindo os con
 * Organização e boas práticas de código;
 * Uso adequado de imagens e assets.
 
-
 ---
 
 ## 📁 Arquivos
 
-📦 tokusen
-┣ 📁 img
-┣ index.html
-┣ login.html
-┣ pedido.html
-┣ style.css
-┣ Login e Senha.txt
-┗ README.md
-
-```
 📦 projeto-landing-page
  ┣ 📁 img
  ┃ ┣ banner.jpg
@@ -57,7 +46,16 @@ A proposta deste trabalho foi elaborar uma **Página completa**, seguindo os con
  ┃ ┗ facebook.png
  ┣ index.html
  ┗ README.md
-```
+ 
+
+📦 tokusen
+┣ 📁 img
+┣ index.html
+┣ login.html
+┣ pedido.html
+┣ style.css
+┣ Login e Senha.txt
+┗ README.md
 
 ---
 
