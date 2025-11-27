@@ -1,6 +1,6 @@
 # Landing Page – Trabalho de Avaliação (P2)
 
-Página desenvolvida como avaliação da disciplina **Desenvolvimento Web 1 (P2)**, da **FATEC Praia Grande**, para o curso **DSM – 1° Ciclo (2025)**.
+Página desenvolvida para disciplina **Desenvolvimento Web 1 (P2)**, da **FATEC Praia Grande**, para o curso **DSM – 1° Ciclo (2025)**.
 
 ---
 
@@ -8,7 +8,7 @@ Página desenvolvida como avaliação da disciplina **Desenvolvimento Web 1 (P2)
 
 * **Nome:** Daniela Feitoza Alves
 * **Disciplina:** Desenvolvimento Web 1
-* **Professor(a):** *Eulaliane*
+* **Professora:** Eulaliane
 * **Turma:** DSM – 1° Ciclo / 2025
 
 ---
@@ -22,9 +22,9 @@ Senha: 1291392522002
 
 ---
 
-## 📌 Sobre o Projeto
+## 📌 Sobre
 
-A proposta deste trabalho foi criar uma **Página completa**, seguindo os conteúdos vistos em aula:
+A proposta deste trabalho foi elaborar uma **Página completa**, seguindo os conteúdos vistos em sala de aula:
 
 * Estruturação com **HTML5**;
 * Estilização com **CSS3**;
@@ -33,7 +33,6 @@ A proposta deste trabalho foi criar uma **Página completa**, seguindo os conte�
 * Organização e boas práticas de código;
 * Uso adequado de imagens e assets.
 
-Todo o conteúdo da página foi organizado em pastas, seguindo a estrutura recomendada em aula.
 
 ---
 
