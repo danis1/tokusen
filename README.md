@@ -1,4 +1,4 @@
-#### Trabalho de Avaliação (P2)
+### Trabalho de Avaliação (P2)
 
 Página desenvolvida para disciplina **Desenvolvimento Web 1 (P2)**, da **FATEC Praia Grande**, para o curso **DSM – 1° Ciclo (2025)**
 
